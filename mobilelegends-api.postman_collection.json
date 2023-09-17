@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "fe4dfa19-487e-4bc1-b833-35a5ec2122c2",
+		"name": "mobilelegends-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23660564"
+	},
+	"item": [
+		{
+			"name": "hero",
+			"item": [
+				{
+					"name": "get all hero",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"Alucard\",\r\n        \"role\": [\"Fighter\", \"Assassin\"],\r\n        \"special\": [\"Charge\", \"Crowd Control\"],\r\n        \"avatar\": \"asdasd\",\r\n        \"abilities\": [\r\n            {\r\n                \"name\": \"Pursuit\",\r\n                \"description\": \"Alucard's skills deal 1.3 damage when hitting only one enemy hero or Creep. After each skill cast, his next Basic Attack deals 1.4 times damage and allows him to dash to the target's location.\"\r\n            },\r\n            {\r\n                \"name\": \"Groundsplitter\",\r\n                \"description\": \"Alucard rolls to the target location and slams his blade on the ground, dealing 270–370 (+110% Extra Physical Attack) Physical Damage to enemies hit and slowing them by 40% for 2s.\"\r\n            },\r\n            {\r\n                \"name\": \"Whirling Smash\",\r\n                \"description\": \"Alucard launches a whirling slash, dealing 320–420 (+120% Extra Physical Attack) Physical Damage to nearby enemies.\"\r\n            },\r\n            {\r\n                \"name\": \"Fission Wave\",\r\n                \"description\": \"Passive: Alucard gains 5-15% extra Hybrid Lifesteal. Alucard absorbs the energy of enemies within the designated area, gaining 15% / 20% / 25% Hybrid Lifesteal and reducing the cooldown of other skills to 50%, slowing enemies by 40% for 4 seconds, and marking them for 6 seconds, during which his attacks against marked enemies will always trigger Pursuit Pursuit. Use again: Alucard releases a shockwave in the target direction, dealing 400–700 (+200% Extra Physical Attack) Physical Damage to enemies hit.\" \r\n            }\r\n        ],\r\n        \"price\": {\r\n            \"battelpoint\": 32000,\r\n            \"diamond\": null,\r\n            \"ticket\": 399\r\n        },\r\n        \"_storyId\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/hero",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hero by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/hero/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store hero",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/hero",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update hero per row",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/hero/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete hero by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/hero/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hero by role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"Alucard\",\r\n        \"role\": [\"Fighter\", \"Assassin\"],\r\n        \"special\": [\"Charge\", \"Crowd Control\"],\r\n        \"avatar\": \"asdasd\",\r\n        \"abilities\": [\r\n            {\r\n                \"name\": \"Pursuit\",\r\n                \"description\": \"Alucard's skills deal 1.3 damage when hitting only one enemy hero or Creep. After each skill cast, his next Basic Attack deals 1.4 times damage and allows him to dash to the target's location.\"\r\n            },\r\n            {\r\n                \"name\": \"Groundsplitter\",\r\n                \"description\": \"Alucard rolls to the target location and slams his blade on the ground, dealing 270–370 (+110% Extra Physical Attack) Physical Damage to enemies hit and slowing them by 40% for 2s.\"\r\n            },\r\n            {\r\n                \"name\": \"Whirling Smash\",\r\n                \"description\": \"Alucard launches a whirling slash, dealing 320–420 (+120% Extra Physical Attack) Physical Damage to nearby enemies.\"\r\n            },\r\n            {\r\n                \"name\": \"Fission Wave\",\r\n                \"description\": \"Passive: Alucard gains 5-15% extra Hybrid Lifesteal. Alucard absorbs the energy of enemies within the designated area, gaining 15% / 20% / 25% Hybrid Lifesteal and reducing the cooldown of other skills to 50%, slowing enemies by 40% for 4 seconds, and marking them for 6 seconds, during which his attacks against marked enemies will always trigger Pursuit Pursuit. Use again: Alucard releases a shockwave in the target direction, dealing 400–700 (+200% Extra Physical Attack) Physical Damage to enemies hit.\" \r\n            }\r\n        ],\r\n        \"price\": {\r\n            \"battelpoint\": 32000,\r\n            \"diamond\": null,\r\n            \"ticket\": 399\r\n        },\r\n        \"_storyId\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/hero/role/assassin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero",
+								"role",
+								"assassin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get data by hero name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/hero/name/miya",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hero",
+								"name",
+								"miya"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "item",
+			"item": [
+				{
+					"name": "get all item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"Sea Halberd\",\r\n        \"category\": \"Attack\",\r\n        \"effect\": \"Healing Reduction\",\r\n        \"picture\": null,\r\n        \"unique_passive\": [\r\n            {\r\n                \"name\": \"Lifebane\",\r\n                \"description\": \"Reduces Shield and HP Regen effects on the target by 50% for 3 seconds after dealing damage.\"\r\n            },\r\n            {\r\n                \"name\": \"Punish\",\r\n                \"description\": \"Increases damage by 8% against enemy heroes with higher extra HP.\"\r\n            }\r\n        ],\r\n        \"unique_attribute\": null,\r\n        \"active_skill\": null,\r\n        \"price\": 2050,\r\n        \"_storyId\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/item",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update item per row",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item/category/attack",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item",
+								"category",
+								"attack"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item/name/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item",
+								"name",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commander",
+			"item": [
+				{
+					"name": "get all item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commander",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commander"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commander/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commander",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/commander",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commander"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update item per row",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commander/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commander",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commander/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commander",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/item/commander/dawn-commander",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"item",
+								"commander",
+								"dawn-commander"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commander/name",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commander",
+								"name"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
