@@ -90,9 +90,9 @@ class CommanderController {
   async destroy(req: Request, res: Response) {
     try {
       const { id } = req.params;
-      const deletedHero = await Commander.findOneAndDelete({ id: id });
+      const results = await Commander.findOneAndDelete({ id: id });
 
-      if (!deletedHero) {
+      if (!results) {
         return res
           .status(404)
           .json(errorResponse("No Data Found For The Given Id"));
@@ -100,7 +100,7 @@ class CommanderController {
 
       res
         .status(200)
-        .json(successResponse("Successfully Deleted Data", deletedHero));
+        .json(successResponse("Successfully Deleted Data", results));
     } catch (error) {
       console.error(error);
       res.status(500).json(errorResponse("Delete Data Error"));

@@ -25,21 +25,9 @@
     // "moduleDetection": "auto",                        /* Control what method is used to detect module-format JS files. */
 
     /* Modules */
-<<<<<<< HEAD
-<<<<<<< HEAD
     "module": "NodeNext",                                /* Specify what module code is generated. */
     // "rootDir": "./",                                  /* Specify the root folder within your source files. */
     "moduleResolution": "NodeNext",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-=======
-    "module": "nodenext",                                /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    "moduleResolution": "node",                     /* Specify how TypeScript looks up a file from a given module specifier. */
->>>>>>> 8d5f4c1 (reafactor: change to typescript)
-=======
-    "module": "NodeNext",                                /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    "moduleResolution": "NodeNext",                     /* Specify how TypeScript looks up a file from a given module specifier. */
->>>>>>> 9ca8c10 (refactor: hero, item & commander services)
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "mongoose": ["node_modules/mongoose"]

@@ -5,31 +5,19 @@ interface IHero extends Document {
   name: string;
   role: string[];
   special: string[];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9ca8c10 (refactor: hero, item & commander services)
-  avatar: string | null;
-  abilities: {
+  avatar?: string | null;
+  abilities?: {
     name: string;
     desc: string;
   }[];
-  price: {
+  price?: {
     currency: string;
     amount: number | null;
   }[];
-<<<<<<< HEAD
-=======
-  avatar?: string;
-  abilities?: string[];
-  price: Record<string, number>;
->>>>>>> 8d5f4c1 (reafactor: change to typescript)
-=======
->>>>>>> 9ca8c10 (refactor: hero, item & commander services)
   _storyId: number;
 }
 
-const HeroSchema: Schema = new Schema({
+const HeroSchema: Schema = new Schema<IHero>({
   id: {
     type: Number,
     required: true,
@@ -50,10 +38,6 @@ const HeroSchema: Schema = new Schema({
     type: String,
     required: false,
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9ca8c10 (refactor: hero, item & commander services)
   abilities: [
     {
       name: {
@@ -78,19 +62,6 @@ const HeroSchema: Schema = new Schema({
       },
     },
   ],
-<<<<<<< HEAD
-=======
-  abilities: {
-    type: [String],
-    required: false,
-  },
-  price: {
-    type: Object,
-    required: true,
-  },
->>>>>>> 8d5f4c1 (reafactor: change to typescript)
-=======
->>>>>>> 9ca8c10 (refactor: hero, item & commander services)
   _storyId: {
     type: Number,
     required: true,
