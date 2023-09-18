@@ -7,7 +7,7 @@ class CommanderController {
     try {
       const results = await Commander.find();
 
-      if (!results) {
+      if (!results || results.length === 0) {
         return res.status(404).json(errorResponse("No Data Found"));
       }
 
@@ -20,14 +20,14 @@ class CommanderController {
 
   async store(req: Request, res: Response) {
     try {
-      const { id, name, avatar, abilities, category, price } = req.body;
+      const { id, name, category, avatar, abilities, price } = req.body;
 
-      const results = Commander.create({
+      const results = await Commander.create({
         id,
         name,
+        category,
         avatar,
         abilities,
-        category,
         price,
       });
 
@@ -116,7 +116,7 @@ class CommanderController {
         name: { $regex: decodedName, $options: "i" },
       });
 
-      if (!results) {
+      if (!results || results.length === 0) {
         return res
           .status(404)
           .json(errorResponse("No Data Found For The Given Name"));
@@ -126,7 +126,7 @@ class CommanderController {
         .status(200)
         .json(successResponse("Successfully Get Data by Name", results));
     } catch (error) {
-      res.status(500).json(errorResponse("Get Data Error"));
+      res.status(500).json(errorResponse("Get Data By Name Error"));
     }
   }
 
@@ -137,18 +137,18 @@ class CommanderController {
         category: { $regex: `\\b${category}\\b`, $options: "i" },
       });
 
-      if (!results) {
+      if (!results || results.length === 0) {
         return res
           .status(404)
-          .json(errorResponse("No Data Found For The Given Role"));
+          .json(errorResponse("No Data Found For The Given Category"));
       }
 
       res
         .status(200)
-        .json(successResponse("Successfully Get Data by Role", results));
+        .json(successResponse("Successfully Get Data by Category", results));
     } catch (error) {
       console.log(error);
-      res.status(500).json(errorResponse("Get Data Error"));
+      res.status(500).json(errorResponse("Get Data By Category Error"));
     }
   }
 }

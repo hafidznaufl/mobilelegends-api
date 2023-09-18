@@ -7,7 +7,7 @@ class HeroController {
     try {
       const results = await Hero.find();
 
-      if (!results) {
+      if (!results || results.length === 0) {
         return res.status(404).json(errorResponse("No Data Found"));
       }
 
@@ -118,7 +118,7 @@ class HeroController {
         name: { $regex: decodedName, $options: "i" },
       });
 
-      if (!results) {
+      if (!results || results.length === 0 ) {
         return res
           .status(404)
           .json(errorResponse("No Data Found For The Given Name"));
@@ -139,7 +139,7 @@ class HeroController {
         role: { $regex: `\\b${role}\\b`, $options: "i" },
       });
 
-      if (!results) {
+      if (!results || results.length === 0) {
         return res
           .status(404)
           .json(errorResponse("No Data Found For The Given Role"));

@@ -32,10 +32,18 @@ const CommanderSchema: Schema = new Schema({
     type: String,
     required: false,
   },
-  abilities: {
-    type: [String],
-    required: true,
-  },
+  abilities: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      desc: {
+        type: String,
+        required: false,
+      },
+    },
+  ],
   price: [
     {
       currency: {

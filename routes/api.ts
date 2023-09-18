@@ -1,5 +1,6 @@
 import express from "express";
 import { Router } from "express";
+import { authenticateToken } from "../middleware/auth";
 import HeroController from "../controller/HeroController";
 import ItemController from "../controller/ItemController";
 import CommanderController from "../controller/CommanderController";
@@ -14,34 +15,33 @@ router.get("/", (req, res) => {
  * Hero Endpoints
  */
 router.get("/hero", HeroController.index);
-router.post("/hero", HeroController.store);
 router.get("/hero/:id", HeroController.show);
-router.patch("/hero/:id", HeroController.update);
-router.put("/hero/:id", HeroController.update);
-router.delete("/hero/:id", HeroController.destroy);
 router.get("/hero/name/:name", HeroController.findByName);
 router.get("/hero/role/:role", HeroController.findByRole);
+router.post("/hero", authenticateToken, HeroController.store);
+router.patch("/hero/:id", authenticateToken, HeroController.update);
+router.delete("/hero/:id", authenticateToken, HeroController.destroy);
 
 /**
  * Item Endpoints
  */
 router.get("/item", ItemController.index);
-router.post("/item", ItemController.store);
 router.get("/item/:id", ItemController.show);
-router.patch("/item/:id", ItemController.update);
-router.delete("/item/:id", ItemController.destroy);
 router.get("/item/name/:name", ItemController.findByName);
 router.get("/item/category/:category", ItemController.findByCategory);
+router.post("/item", authenticateToken, ItemController.store);
+router.patch("/item/:id", authenticateToken, ItemController.update);
+router.delete("/item/:id", authenticateToken, ItemController.destroy);
 
 /**
  * Commander Endpoints
  */
 router.get("/commander", CommanderController.index);
-router.post("/commander", CommanderController.store);
 router.get("/commander/:id", CommanderController.show);
-router.patch("/commander/:id", CommanderController.update);
-router.delete("/commander/:id", CommanderController.destroy);
 router.get("/commander/name/:name", CommanderController.findByName);
 router.get("/commander/category/:category", CommanderController.findByCategory);
+router.post("/commander", authenticateToken, CommanderController.store);
+router.patch("/commander/:id", authenticateToken, CommanderController.update);
+router.delete("/commander/:id", authenticateToken, CommanderController.destroy);
 
 export default router;

@@ -76,13 +76,13 @@ class ItemController {
       const { id } = req.params;
       const updateData = req.body;
 
-      const updatedItem = await Item.findOneAndUpdate(
+      const results = await Item.findOneAndUpdate(
         { id: id },
         { $set: updateData },
         { new: true }
       );
 
-      if (!updatedItem) {
+      if (!results) {
         return res
           .status(404)
           .json(errorResponse("No Data Found For The Given Id"));
@@ -90,7 +90,7 @@ class ItemController {
 
       res
         .status(200)
-        .json(successResponse("Successfully Updated Data", updatedItem));
+        .json(successResponse("Successfully Updated Data", results));
     } catch (error) {
       console.error(error);
       res.status(500).json(errorResponse("Update Data Error"));
