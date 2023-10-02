@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
 
-app.use(handleInvalidEndpoint)
+app.use(handleInvalidEndpoint);
 
 const PORT = process.env.PORT || 8000;
 

@@ -7,6 +7,10 @@ class ItemController {
     try {
       const results = await Item.find();
 
+      if (!results || results.length === 0) {
+        return res.status(404).json(errorResponse("No Data Found"));
+      }
+
       res.status(200).json(successResponse("Successfully Get Data", results));
     } catch (error) {
       console.log(error);
